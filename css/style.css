@@ -1,6 +1,23 @@
 @font-face{
+  font-family: 'Raleway-regular';
+  src: url('../Raleway-Regular.ttf');
+}
+
+@font-face{
   font-family: 'Raleway-bold';
   src: url('../Raleway-Bold.ttf');
+}
+
+h1{
+  margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
 }
 
 main{
@@ -51,7 +68,7 @@ header {
   height: 5vw;
   border-radius: 50%;
   margin-left: 10px;
-  border: 5px solid rgba(0, 0, 0, 0.1);;
+  border: 5px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 3px rgba(0,0,0,.4);
 }
 #button:hover{
@@ -86,7 +103,21 @@ header {
   box-shadow: 0, 0, 8px, rgba(255,255,255,.5);
 }
 
-.raleway{
-  font-family: Raleway-bold;
+.taseBro{
+  font-family: Raleway-regular;
   text-shadow: 2px 2px 8px rgba(0,0,0,.1);
 }
+
+.taseBro h1 { color: white; font-family: 'Raleway-regular',sans-serif;  font-weight: 800; text-transform: uppercase; }
+
+
+  .tasebro h2 { color: #ffffff; font-family: 'Raleway-regular',sans-serif;  font-weight: 800;}
+
+
+  .tasebro p { color: #f8f8f8; font-family: 'Raleway-regular',sans-serif;  font-weight: 500; }
+
+
+  .tasebro a { color: #c8c8c8; text-decoration: underline; }
+
+
+  .tasebro a:hover { color: #1c1c1c; text-decoration: underline; }

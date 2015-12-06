@@ -2,7 +2,6 @@ var userInput = "";
 
 $("#button").click(function(){
   userInput = document.getElementById('userInput').value;
-  console.log(userInput);
   $("header").remove();
   $("#inputArea").remove();
   makeWordSpan(userInput);
@@ -10,7 +9,7 @@ $("#button").click(function(){
 });
 
 makeWordSpan = function(userInput){
-  $("main").append("<div id='wordDiv'><span id='wordSpan'>" + userInput + "</span></div>")
+  $("main").append("<div id='wordDiv'><span id='wordSpan'><h1>" + userInput + "</h1></span></div>")
 }
 
 $("#resetButton").click(function(){
@@ -27,10 +26,10 @@ $("#resetButton").mouseout(function(){
   });
 
 taseMeBro = function(){
-  var fontvar = 'arial';
   $(document).ready(function(){
-  $("#wordSpan").addClass("raleway");
-  $("body").css('background', "linear-gradient(to right, #1e5799 0%,#2989d8 100%)");
+  $("#wordSpan").addClass("taseBro");
+  $("#wordSpan h1").addClass("taseBro");
+  $("body").css('background', "linear-gradient(to right, #126bbf 0%,#167cdd 100%)");
   $("body").css('color', "white");
 
   })
