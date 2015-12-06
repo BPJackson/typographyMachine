@@ -56,7 +56,7 @@ earlyNight = function(){
 beautyWords = function(){
   $("#wordSpan").addClass("beautyWords");
   $("#wordSpan h1").addClass("beautyWords");
-  $("body").css('background', "linear-gradient(to lower right, #dcdbdb 0%,#ededed 100%)");
+  $("body").css('background', "linear-gradient(to left, #d7d5d5 0%,#ededed 100%)");
   $("#wordDiv").prepend("<img id='blockquote' src='http://typespiration.com/wp-content/themes/typespiration/images/quote.png'><br>");
   $('#wordDiv').css("margin-top","-100px");
 }
