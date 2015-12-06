@@ -7,11 +7,14 @@ $("#button").click(function(){
   $("header").remove();
   $("#inputArea").remove();
   makeWordSpan(userInput);
-  if (rand < 50){
+  if (rand < 33){
   earlyNight();
   }
-  else if (rand > 50){
+  else if (rand > 33 && rand < 66){
   taseMeBro();
+  }
+  else if (rand > 66){
+    beautyWords();
   }
 });
 
@@ -44,8 +47,16 @@ taseMeBro = function(){
 earlyNight = function(){
   $(document).ready(function(){
     $("#wordSpan").addClass("earlyNight");
-    $("#wordSpan h1").addClass("taseBro");
+    $("#wordSpan h1").addClass("earlyNight");
     $("body").css('background', "linear-gradient(to right, #1c2329 0%,#313d46 100%)");
     $("main").append("<span id='eNightDate'>" + $.now() + "</span>")
   })
+}
+
+beautyWords = function(){
+  $("#wordSpan").addClass("beautyWords");
+  $("#wordSpan h1").addClass("beautyWords");
+  $("body").css('background', "linear-gradient(to lower right, #dcdbdb 0%,#ededed 100%)");
+  $("#wordDiv").prepend("<img id='blockquote' src='http://typespiration.com/wp-content/themes/typespiration/images/quote.png'><br>");
+  $('#wordDiv').css("margin-top","-100px");
 }

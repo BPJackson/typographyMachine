@@ -8,10 +8,16 @@
   src: url('../Raleway-Bold.ttf');
 }
 
-@@font-face {
+@font-face {
   font-family: 'Lato';
   src: url('../Lato-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'Lato-bold';
+  src: url('../Lato-Bold.ttf')
+}
+
 
 h1{
   margin: 0;
@@ -94,7 +100,7 @@ header {
   font-size: 10vw;
   margin: 0 auto;
   text-align: center;
-  padding-top: 25vh
+  padding-top: 30vh
 }
 
 #reset{
@@ -131,7 +137,7 @@ header {
 text-shadow: 2px 2px 8px rgba(0,0,0,.1);
 }
 
-  .earlyNight h1 { color: rgba(255,255,255,.9); font-family: 'Lato', sans-serif; font-weight: 300; text-transform: uppercase;}
+  .earlyNight h1 { color: rgba(255,255,255,.9); font-family: 'Lato-bold', sans-serif; font-weight: 300; text-transform: uppercase;}
 
 
   .earlyNight p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif;  text-indent: 30px; margin: 0; }
@@ -143,21 +149,32 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   .earlyNight a:hover { color: #ffffff }
 
 
-#eNightDate {
-  background: #fe921f;
-  color: #ffffff;
-  display: inline-block;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 12px;
-  letter-spacing: 1px;
-  margin: 0 0 30px;
-  padding: 10px 15px 8px;
-  text-transform: uppercase;
-  box-shadow: 2px 2px 8px rgba(0,0,0,.3);
-  position: absolute;
-  top: 60px;
-  left: 60px;
+  #eNightDate {
+    background: #fe921f;
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    letter-spacing: 1px;
+    margin: 0 0 30px;
+    padding: 10px 15px 8px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    }
+
+.beautyWords{
 
   }
+
+  .beautyWords h1 {color: rgba(242,242,242,1); background: #ff4a4a;  font-weight: 700; font-family: 'Libre Baskerville', serif; float: left; margin-left: 150px; }
+
+  .beautyWords p {background: #f2f2f2; color: #ff4a4a;}
+
+#blockquote {
+  float: left; margin-left: 150px;
+}
