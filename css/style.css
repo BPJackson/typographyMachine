@@ -1,3 +1,58 @@
-body {
-  background-color: red;
+header {
+  width: 60vw;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 15vh;
+  font-size: 5vw;
+}
+
+#inputArea {
+  padding-top: 15vh;
+  width: 100vw;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+#userInput {
+  border: 5px solid rgba(0, 0, 0, 0.1);;
+  box-shadow: inset 0 0 8px rgba(0,0,0,.4),
+                    0 0 10px rgba(0,0,0,.4);
+  padding: 15px;
+  width: 40vw;
+  text-align: center;
+  font-size: 2vw;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+#userInput:active {
+  box-shadow: inset 0 0 8px rgba(0,0,0,.8),
+                    0 0 10px rgba(0,0,0,.8);
+  border: 5px solid rgba(0, 0, 0, 0.4);
+  background-color: gray;
+  color: white;
+}
+
+#button{
+  background-color: white;
+  font-size: 1.5vw;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  margin-left: 10px;
+  border: 5px solid rgba(0, 0, 0, 0.1);;
+  box-shadow: 0 0 3px rgba(0,0,0,.4);
+}
+#button:hover{
+  background-color: gray;
+  border: 5px solid rgba(0, 0, 0, 0.4);
+  color: white;
+}
+#button:active{
+  background-color: white;
+  box-shadow: inset 0 0 3px rgba(0,0,0,.4),
+                    0 0 4px rgba(0,0,0,.6);
+  border: 5px solid rgba(0, 0, 0, 0.4);
+  color: black;
 }
