@@ -8,6 +8,11 @@
   src: url('../Raleway-Bold.ttf');
 }
 
+@@font-face {
+  font-family: 'Lato';
+  src: url('../Lato-Regular.ttf');
+}
+
 h1{
   margin: 0;
 	padding: 0;
@@ -108,7 +113,7 @@ header {
   text-shadow: 2px 2px 8px rgba(0,0,0,.1);
 }
 
-.taseBro h1 { color: white; font-family: 'Raleway-regular',sans-serif;  font-weight: 800; text-transform: uppercase; }
+  .taseBro h1 { color: white; font-family: 'Raleway-bold',sans-serif;  font-weight: 800; text-transform: uppercase; }
 
 
   .tasebro h2 { color: #ffffff; font-family: 'Raleway-regular',sans-serif;  font-weight: 800;}
@@ -121,3 +126,38 @@ header {
 
 
   .tasebro a:hover { color: #1c1c1c; text-decoration: underline; }
+
+.earlyNight{
+text-shadow: 2px 2px 8px rgba(0,0,0,.1);
+}
+
+  .earlyNight h1 { color: rgba(255,255,255,.9); font-family: 'Lato', sans-serif; font-weight: 300; text-transform: uppercase;}
+
+
+  .earlyNight p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif;  text-indent: 30px; margin: 0; }
+
+
+  .earlyNight a { color: #fe921f; text-decoration: underline; }
+
+
+  .earlyNight a:hover { color: #ffffff }
+
+
+#eNightDate {
+  background: #fe921f;
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  letter-spacing: 1px;
+  margin: 0 0 30px;
+  padding: 10px 15px 8px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+  position: absolute;
+  top: 60px;
+  left: 60px;
+
+  }
