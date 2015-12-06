@@ -1,3 +1,7 @@
+main{
+  width: 100vw;
+}
+
 header {
   width: 60vw;
   text-align: center;
@@ -55,4 +59,12 @@ header {
                     0 0 4px rgba(0,0,0,.6);
   border: 5px solid rgba(0, 0, 0, 0.4);
   color: black;
+}
+
+#wordSpan{
+  width: 100vw;
+  font-size: 10vw;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 25vh
 }
