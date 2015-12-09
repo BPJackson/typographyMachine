@@ -19,7 +19,7 @@ $("#button").click(function(){
 });
 
 makeWordSpan = function(userInput){
-  $("main").append("<div id='wordDiv'><span id='wordSpan'><h1>" + userInput + "</h1></span></div>")
+  $("main").append("<div id='wordDiv'><span class='slabtext'><span id='wordSpan'><h1>" + userInput + "</h1></span></span></div>")
 }
 
 $("#resetButton").click(function(){
