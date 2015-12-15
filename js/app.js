@@ -18,21 +18,22 @@ $(document).on("click", "#button", function(){
 
 function style(){
   makeWordSpan(userInput);
-    rand = Math.random() * 100;
-  if (rand < 25){
-    earlyNight();
-  }
-  else if (rand > 25 && rand < 50){
-    taseMeBro();
-  }
-  else if (rand > 50 && rand < 75){
-    flowers();
-  }
-  else if (rand > 75){
-    walt();
-  }
+  tomKendry();
+  //   rand = Math.random() * 100;
+  // if (rand < 25){
+  //   earlyNight();
+  // }
+  // else if (rand > 25 && rand < 50){
+  //   taseMeBro();
+  // }
+  // else if (rand > 50 && rand < 75){
+  //   flowers();
+  // }
+  // else if (rand > 75){
+  //   walt();
+  // }
   if (userInput.length < 10){
-    jQuery(".fit").fitText(.5);
+    jQuery(".fit").fitText(.6);
   }
   else{
     jQuery(".fit").fitText();
@@ -109,4 +110,25 @@ walt = function(){
   $("body").css("background-color", "#153896");
   $("main").prepend("<img id=castle class=background src='images/disneyCastle.png'>");
 
+}
+
+tomKendry = function(){
+  wordArr = [];
+  $("#wordSpan").addClass("tomKendry");
+  $("body").css("background-color", "skyblue");
+  for (var i = 0; i < userInput.length; i++) {
+    wordArr.push(userInput[i]);
+  }
+  console.log(wordArr)
+  $("#wordSpan").remove();
+  $("#wordDiv").append("<span id=wordSpan><h1 id=headline class=fit>");
+  for (var i = 0; i < wordArr.length; i++) {
+    if (wordArr[i] == " "){
+      $("#headline").append("<span class=space>" + wordArr[i] + "</span>")
+    }
+    else{
+      $("#headline").append("<span class=tomKendry>" + wordArr[i] + "</span>")
+    }
+  }
+  $("#wordDiv").append("</span></h1>");
 }
