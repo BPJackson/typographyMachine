@@ -99,3 +99,14 @@ header {
   width: 5vw;
   box-shadow: 0, 0, 8px, rgba(255,255,255,.5);
 }
+
+#shuffle{
+  position: absolute;
+  bottom: 0;
+  right: 6vw;
+}
+
+#shuffle img{
+  width: 5vw;
+  box-shadow: 0, 0, 8px, rgba(255,255,255,.5);
+}
