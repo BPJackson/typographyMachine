@@ -18,18 +18,21 @@ $(document).on("click", "#button", function(){
 
 function style(){
   makeWordSpan(userInput);
-  tomKendry();
-  //   rand = Math.random() * 100;
-  // if (rand < 25){
+    rand = Math.random() * 100;
+    heavy();
+  // if (rand < 20){
   //   earlyNight();
   // }
-  // else if (rand > 25 && rand < 50){
+  // else if (rand > 20 && rand < 40){
   //   taseMeBro();
   // }
-  // else if (rand > 50 && rand < 75){
+  // else if (rand > 40 && rand < 65){
   //   flowers();
   // }
-  // else if (rand > 75){
+  // else if (rand > 60 && rand < 80){
+  //   tomKendry();
+  // }
+  // else if (rand > 85){
   //   walt();
   // }
   if (userInput.length < 10){
@@ -131,4 +134,9 @@ tomKendry = function(){
     }
   }
   $("#wordDiv").append("</span></h1>");
+}
+
+heavy = function(){
+  $("#wordSpan").addClass("heavy");
+  $("body").css('background', "linear-gradient(5deg, #ffffff 0%,#d0d0d0 100%)");
 }
