@@ -11,9 +11,20 @@ var userInput = "";
 
 $(document).on("click", "#button", function(){
   userInput = document.getElementById('userInput').value;
+
+  var getter = $.ajax({
+  url: "http://api.urbandictionary.com/v0/define?term="+userInput,
+  method: "GET",
+  dataType: "json"
+  });
+
+  getter.done(function(response){
+    console.log(response);
+  });
   $("header").remove();
   $("#inputArea").remove();
   style();
+
 })
 
 function style(){
