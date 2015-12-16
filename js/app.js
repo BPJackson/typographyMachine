@@ -1,25 +1,15 @@
 var userInput = "";
 
 
-$(document).on("click", "#button", function(){
+$(document).on("click", "#button", function wordMagic(){
   userInput = document.getElementById('userInput').value;
-
-  var getter = $.ajax({
-  url: "http://randomword.setgetgo.com/get.php",
-  method: "GET",
-  dataType: "jsonp"
-  });
-
-  getter.done(function(response){
-    console.log(response);
-  });
-  $("header").remove();
-  $("#inputArea").remove();
   style();
 
 })
 
 function style(){
+  $("header").remove();
+  $("#inputArea").remove();
   makeWordSpan(userInput);
     rand = Math.random() * 100;
     selectStyle();
@@ -178,3 +168,46 @@ function flyer(){
   $("body").css("background-color", "purple");
 
 }
+
+var word = "";
+var definition = "";
+var example = "";
+var author = "";
+
+$(document).on("click", "#randoBlock", function getWord(){
+var getter = $.ajax({
+url: "http://randomword.setgetgo.com/get.php",
+method: "GET",
+dataType: "jsonp"
+});
+
+getter.done(function(response){
+  if (response.length > 10){
+    getWord;
+  }
+  else{
+    console.log(response);
+    word = response["Word"];
+    var getIt = $.ajax({
+      url: "http://api.urbandictionary.com/v0/define?term=" + word,
+      method: "GET",
+      dataType: "jsonp"
+    });
+  }
+
+  getIt.done(function(response){
+    console.log("word is " + word);
+    if (response["result_type"] == "no_results")
+    {
+      getWord();
+    }
+    else{
+      userInput = word;
+      console.log("urban response is " + response["list"][0].definition);
+      console.log("urban example is " + response["list"][0].example);
+      console.log("by User: " + response["list"][0].author);
+      style();
+    }
+  });
+});
+});
