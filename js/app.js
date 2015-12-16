@@ -19,27 +19,39 @@ $(document).on("click", "#button", function(){
 function style(){
   makeWordSpan(userInput);
     rand = Math.random() * 100;
-    heavy();
-  // if (rand < 20){
-  //   earlyNight();
-  // }
-  // else if (rand > 20 && rand < 40){
-  //   taseMeBro();
-  // }
-  // else if (rand > 40 && rand < 65){
-  //   flowers();
-  // }
-  // else if (rand > 60 && rand < 80){
-  //   tomKendry();
-  // }
-  // else if (rand > 85){
-  //   walt();
-  // }
+    selectStyle();
   if (userInput.length < 10){
     jQuery(".fit").fitText(.6);
   }
   else{
     jQuery(".fit").fitText();
+  }
+}
+
+function selectStyle(){
+  if (rand < 12.5){
+    earlyNight();
+  }
+  else if (rand > 12.5 && rand < 25){
+    taseMeBro();
+  }
+  else if (rand > 25 && rand < 37.5){
+    heavy();
+  }
+  else if (rand > 37.5 && rand < 50){
+    flowers();
+  }
+  else if (rand > 50 && rand < 62.5){
+    tomKendry();
+  }
+  else if (rand > 62.5 && rand < 75){
+    hang();
+  }
+  else if (rand > 75 && rand < 87.5){
+    flyer();
+  }
+  else if (rand > 87.5){
+    walt();
   }
 }
 
@@ -71,6 +83,7 @@ $("#shuffleButton").click(function(){
   $("#wordDiv").remove();
   $("main .background").remove();
   $("body").css("background", "none")
+  $("#lightBlend").remove();
   style();
 })
 
@@ -122,7 +135,6 @@ tomKendry = function(){
   for (var i = 0; i < userInput.length; i++) {
     wordArr.push(userInput[i]);
   }
-  console.log(wordArr)
   $("#wordSpan").remove();
   $("#wordDiv").append("<span id=wordSpan><h1 id=headline class=fit>");
   for (var i = 0; i < wordArr.length; i++) {
@@ -138,5 +150,20 @@ tomKendry = function(){
 
 heavy = function(){
   $("#wordSpan").addClass("heavy");
-  $("body").css('background', "linear-gradient(5deg, #ffffff 0%,#d0d0d0 100%)");
+  $("body").css('background', "linear-gradient(to bottom, #ffffff 0%, #f4f4f4 70%, #e7e6e6 100%)");
+  $("body").css('background-repeat', "no-repeat");
+
+}
+
+function hang(){
+  $("#wordSpan").addClass("hang");
+  $("body").css('background-image', "radial-gradient(ellipse farthest-corner at 50% 65% , rgba(255,238,132,.5) 20%, #6e6e6e 60%, #222222 85%)");
+  $("body").append("<div id=lightBlend></div>");
+  $("#lightBlend").css('background-image', "radial-gradient(ellipse farthest-corner at 50% 65% , rgba(255,238,132,.2) 20%,  rgba(0,0,0,.0) 55%)");
+}
+
+function flyer(){
+  $("#wordSpan").addClass("flyer");
+  $("body").css("background-color", "purple");
+
 }
