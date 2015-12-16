@@ -111,3 +111,9 @@ header {
   width: 5vw;
   box-shadow: 0, 0, 8px, rgba(255,255,255,.5);
 }
+
+#randoBlock{
+  width: 5vw;
+  clear: both;
+  margin-top: 20px;
+}

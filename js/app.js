@@ -1,21 +1,13 @@
 var userInput = "";
 
-// $("#button").click(function(){
-//   userInput = document.getElementById('userInput').value;
-//   rand = Math.random() * 100;
-//   console.log(rand);
-//   $("header").remove();
-//   $("#inputArea").remove();
-//   makeWordSpan(userInput);
-// });
 
 $(document).on("click", "#button", function(){
   userInput = document.getElementById('userInput').value;
 
   var getter = $.ajax({
-  url: "http://api.urbandictionary.com/v0/define?term="+userInput,
+  url: "http://randomword.setgetgo.com/get.php",
   method: "GET",
-  dataType: "json"
+  dataType: "jsonp"
   });
 
   getter.done(function(response){
@@ -90,6 +82,14 @@ $("#shuffleButton").mouseout(function(){
   $(this).attr('src', 'images/shuffleIcon.png');
 });
 
+$("#randoBlock").mouseover(function(){
+  $(this).attr('src', 'images/randoBlock-neg.png');
+});
+
+$("#randoBlock").mouseout(function(){
+  $(this).attr('src', 'images/randoBlock.png');
+});
+
 $("#shuffleButton").click(function(){
   $("#wordDiv").remove();
   $("main .background").remove();
@@ -99,7 +99,7 @@ $("#shuffleButton").click(function(){
 })
 
 
-taseMeBro = function(){
+function taseMeBro(){
   $(document).ready(function(){
   $("#wordSpan").addClass("taseBro");
   $("body").css('background', "linear-gradient(to right, #126bbf 0%,#167cdd 100%)");
@@ -107,7 +107,7 @@ taseMeBro = function(){
   })
 }
 
-earlyNight = function(){
+function earlyNight(){
   $(document).ready(function(){
     $("#wordSpan").addClass("earlyNight");
     $("body").css('background', "linear-gradient(to right, #1c2329 0%,#313d46 100%)");
@@ -115,7 +115,7 @@ earlyNight = function(){
   })
 }
 
-beautyWords = function(){
+function beautyWords(){
   $(document).ready(function(){
   $("#wordSpan").addClass("beautyWords");
   $("body").css('background', "linear-gradient(to left, #d7d5d5 0%,#ededed 100%)");
@@ -124,7 +124,7 @@ beautyWords = function(){
 })
 }
 
-flowers = function(){
+function flowers(){
   $("#wordSpan").addClass("flowers");
   $("main").prepend("<img id=flowers class=background src='images/flowers.jpg'>");
   $("#wordDiv").css("width", "80vw");
@@ -132,14 +132,14 @@ flowers = function(){
 
 }
 
-walt = function(){
+function walt(){
   $("#wordSpan").addClass("walt");
   $("body").css("background-color", "#153896");
   $("main").prepend("<img id=castle class=background src='images/disneyCastle.png'>");
 
 }
 
-tomKendry = function(){
+function tomKendry(){
   wordArr = [];
   $("#wordSpan").addClass("tomKendry");
   $("body").css("background-color", "skyblue");
@@ -159,7 +159,7 @@ tomKendry = function(){
   $("#wordDiv").append("</span></h1>");
 }
 
-heavy = function(){
+function heavy(){
   $("#wordSpan").addClass("heavy");
   $("body").css('background', "linear-gradient(to bottom, #ffffff 0%, #f4f4f4 70%, #e7e6e6 100%)");
   $("body").css('background-repeat', "no-repeat");
