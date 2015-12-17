@@ -230,12 +230,12 @@ getter.done(function(response){
 
 function styleUrban(){
   rando = "yes";
-  $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
+  $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>-"+author+"</p></div>");
   style();
 }
 
 function restyleUrban(){
-$("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
+$("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>-"+author+"</p></div>");
 }
 
 $(document).on("click", "#randoBlock", function styleIt(){

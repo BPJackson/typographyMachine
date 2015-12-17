@@ -117,3 +117,16 @@ header {
   clear: both;
   margin-top: 20px;
 }
+
+#definitionDiv{
+  width: 90vw;
+  margin: 0 auto;
+}
+
+#exampleP{
+  font-style: italic;
+}
+
+#authorP{
+  text-align: right;
+}
