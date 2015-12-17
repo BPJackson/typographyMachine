@@ -1,6 +1,10 @@
 html {
     min-height: 100%
 }
+body{
+  width: 100vw;
+  height: 100vh;
+}
 
 /*h1{
   margin: 0;
@@ -16,6 +20,7 @@ html {
 
 main{
   width: 100vw;
+  z-index: 0;
   /*position: relative;*/
 }
 
@@ -119,6 +124,7 @@ header {
 }
 
 #definitionDiv{
+  z-index: 1;
   width: 50vw;
   margin: 0 auto;
   position: absolute;

@@ -19,6 +19,7 @@ function style(){
   else{
     jQuery(".fit").fitText();
   }
+  rust();
 }
 
 function selectStyle(){
@@ -247,16 +248,18 @@ getter.done(function(response){
 
 function styleUrban(){
   rando = "yes";
-  $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>-"+author+"</p></div>");
+  $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
     style();
     if (definition !== ""){
-      $("#wordDiv").css("top", "40%");
-      $("#castle").css("width", "30vw")
+      if (rand < 87.5){
+        $("#wordDiv").css("top", "40%");
+        $("#castle").css("width", "30vw")
+      }
     }
 }
 
 function restyleUrban(){
-$("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>-"+author+"</p></div>");
+$("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
 }
 
 $(document).on("click", "#randoBlock", function styleIt(){

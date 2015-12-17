@@ -73,7 +73,7 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   .earlyNight h1 { color: rgba(255,255,255,.9); font-family: 'Lato-bold', sans-serif; font-weight: 300; text-transform: uppercase;}
 
 
-  .earlyNight p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; }
+  .earlyNight p { color: rgba(255,255,255,1); font-family: 'Lucida Sans', Arial, sans-serif; }
 
 
   .earlyNight a { color: #fe921f; text-decoration: underline; }
@@ -201,7 +201,6 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
   color: white;
-  mix-blend-mode: multiply;
   z-index: 9;
 }
 
