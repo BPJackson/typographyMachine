@@ -85,6 +85,10 @@ $("#shuffleButton").click(function(){
   $("main .background").remove();
   $("body").css("background", "none")
   $("#lightBlend").remove();
+  if (rando == "yes"){
+    $("#definitionDiv").remove();
+    restyleUrban();
+  }
   style();
 })
 
@@ -92,6 +96,7 @@ $("#shuffleButton").click(function(){
 function taseMeBro(){
   $(document).ready(function(){
   $("#wordSpan").addClass("taseBro");
+  $("#definitionDiv").addClass("taseBro");
   $("body").css('background', "linear-gradient(to right, #126bbf 0%,#167cdd 100%)");
   $("body").css('color', "white");
   })
@@ -100,6 +105,7 @@ function taseMeBro(){
 function earlyNight(){
   $(document).ready(function(){
     $("#wordSpan").addClass("earlyNight");
+    $("#definitionDiv").addClass("earlyNight");
     $("body").css('background', "linear-gradient(to right, #1c2329 0%,#313d46 100%)");
     $("main").append("<span class=background id='eNightDate'>" + $.now() + "</span>")
   })
@@ -108,6 +114,7 @@ function earlyNight(){
 function beautyWords(){
   $(document).ready(function(){
   $("#wordSpan").addClass("beautyWords");
+  $("#definitionDiv").addClass("beautyWords");
   $("body").css('background', "linear-gradient(to left, #d7d5d5 0%,#ededed 100%)");
   $("#wordDiv").prepend("<img id='blockquote' src='http://typespiration.com/wp-content/themes/typespiration/images/quote.png'><br>");
   // $('#wordDiv').css("margin-top","-100px");
@@ -116,6 +123,7 @@ function beautyWords(){
 
 function flowers(){
   $("#wordSpan").addClass("flowers");
+  $("#definitionDiv").addClass("flowers");
   $("main").prepend("<img id=flowers class=background src='images/flowers.jpg'>");
   $("#wordDiv").css("width", "80vw");
   $("#wordDiv").css("padding-left", "10vw");
@@ -124,6 +132,7 @@ function flowers(){
 
 function walt(){
   $("#wordSpan").addClass("walt");
+  $("#definitionDiv").addClass("walt");
   $("body").css("background-color", "#153896");
   $("main").prepend("<img id=castle class=background src='images/disneyCastle.png'>");
 
@@ -132,6 +141,7 @@ function walt(){
 function tomKendry(){
   wordArr = [];
   $("#wordSpan").addClass("tomKendry");
+  $("#definitionDiv").addClass("tomKendry");
   $("body").css("background-color", "skyblue");
   for (var i = 0; i < userInput.length; i++) {
     wordArr.push(userInput[i]);
@@ -151,6 +161,7 @@ function tomKendry(){
 
 function heavy(){
   $("#wordSpan").addClass("heavy");
+  $("#definitionDiv").addClass("heavy");
   $("body").css('background', "linear-gradient(to bottom, #ffffff 0%, #f4f4f4 70%, #e7e6e6 100%)");
   $("body").css('background-repeat', "no-repeat");
 
@@ -158,6 +169,7 @@ function heavy(){
 
 function hang(){
   $("#wordSpan").addClass("hang");
+  $("#definitionDiv").addClass("hang");
   $("body").css('background-image', "radial-gradient(ellipse farthest-corner at 50% 65% , rgba(255,238,132,.5) 20%, #6e6e6e 60%, #222222 85%)");
   $("body").append("<div id=lightBlend></div>");
   $("#lightBlend").css('background-image', "radial-gradient(ellipse farthest-corner at 50% 65% , rgba(255,238,132,.2) 20%,  rgba(0,0,0,.0) 55%)");
@@ -165,6 +177,7 @@ function hang(){
 
 function flyer(){
   $("#wordSpan").addClass("flyer");
+  $("#definitionDiv").addClass("flyer");
   $("body").css("background-color", "purple");
 
 }
@@ -173,8 +186,9 @@ var word = "";
 var definition = "";
 var example = "";
 var author = "";
+var rando = "no";
 
-$(document).on("click", "#randoBlock", function getWord(){
+$(document).ready(function getWord(){
 var getter = $.ajax({
 url: "http://randomword.setgetgo.com/get.php",
 method: "GET",
@@ -197,17 +211,33 @@ getter.done(function(response){
 
   getIt.done(function(response){
     console.log("word is " + word);
-    if (response["result_type"] == "no_results")
+    if (response["result_type"] == "no_results" || response["list"][0]["definition"].length > 120)
     {
       getWord();
     }
     else{
       userInput = word;
-      console.log("urban response is " + response["list"][0].definition);
-      console.log("urban example is " + response["list"][0].example);
-      console.log("by User: " + response["list"][0].author);
-      style();
+      definition = response["list"][0].definition;
+      example = response["list"][0].example;
+      author = response["list"][0].author;
+      console.log("urban response is " + definition);
+      console.log("urban example is " + example);
+      console.log("by User: " + author);
     }
   });
 });
+});
+
+function styleUrban(){
+  rando = "yes";
+  $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
+  style();
+}
+
+function restyleUrban(){
+$("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
+}
+
+$(document).on("click", "#randoBlock", function styleIt(){
+  styleUrban();
 });
