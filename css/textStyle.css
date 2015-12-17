@@ -38,6 +38,13 @@
   src: url('../HangingLetters.ttf')
 }
 
+@font-face{
+  font-family: 'Courgette';
+  src: url('../Courgette-Regular.ttf')
+}
+
+
+
 .taseBro{
   font-family: Raleway-regular;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
@@ -66,7 +73,7 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   .earlyNight h1 { color: rgba(255,255,255,.9); font-family: 'Lato-bold', sans-serif; font-weight: 300; text-transform: uppercase;}
 
 
-  .earlyNight p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif;  text-indent: 30px; margin: 0; }
+  .earlyNight p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; }
 
 
   .earlyNight a { color: #fe921f; text-decoration: underline; }
@@ -115,6 +122,13 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   text-shadow: 2px 2px 10px rgba(0,0,0,.3);
 }
 
+.flowers p{
+  font-family: bebas;
+  color: black;
+  font-size: 1.3em;
+  text-shadow: 2px 2px 10px rgba(0,0,0,.3);
+}
+
 #flowers{
   position: absolute;
   width: 80vw;
@@ -139,13 +153,21 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   left: 0;
   text-align: center;
   vertical-align: middle;
-  width: 40vw;
+  top: 15vh;
+  width: 50vh;
 }
 
 .walt{
   color: white;
   font-family: walt;
   text-transform: capitalize;
+}
+
+.walt p{
+  font-size: 1.3em;
+  font-family: Courgette;
+  color: white;
+  text-transform: none;
 }
 
 .tomKendry{
@@ -155,6 +177,13 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   color: lightblue;
   background-blend-mode: multiply;
   text-shadow: 3px 3px 5px rgba(0,0,0,.3)
+}
+.tomKendry p{
+  letter-spacing: -.05em;
+  font-family: sans-serif;
+  color: gray;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.8)
+  font-size: 2em;
 }
 
 .heavy{
@@ -187,6 +216,16 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
   color: black;
   text-transform: capitalize;
 }
+.hang p{
+  font-family: Geneva;
+  text-shadow: 0px 3px 0px #b2a98f,
+                0px 1px 5px rgba(0,0,0,0.35),
+                0px 2px 1px rgba(0,0,0,0.3),
+                0px 3px 15px rgba(0,0,0,0.3);
+  z-index: 1;
+  color: black;
+  text-transform: capitalize;
+}
 
 #lightBlend{
   margin: 0 auto;
@@ -206,5 +245,10 @@ text-shadow: 2px 2px 8px rgba(0,0,0,.1);
                  -20px 20px 0px #01cccc,
                  -30px 30px 0px #00bdbd;
   color: white;
+  font-family: sans-serif;
+}
+.flyer p{
+  text-shadow: none;
+  color: #00e6e6;
   font-family: sans-serif;
 }

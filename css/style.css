@@ -119,14 +119,31 @@ header {
 }
 
 #definitionDiv{
-  width: 90vw;
+  width: 50vw;
   margin: 0 auto;
+  position: absolute;
+  bottom: 7vw;
+  left: 50%;
+  transform: translateX(-40%);
+  text-align: center;
+}
+
+#definitionP{
+  text-align: left;
+}
+#definitionP::first-letter{
+  text-transform: uppercase;
 }
 
 #exampleP{
   font-style: italic;
+  text-align: right;
 }
 
 #authorP{
   text-align: right;
+}
+
+p{
+  font-size: 1.3em;
 }

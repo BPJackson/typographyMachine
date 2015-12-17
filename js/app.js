@@ -90,6 +90,13 @@ $("#shuffleButton").click(function(){
     restyleUrban();
   }
   style();
+  if (rando == "yes" && rand < 87.5){
+    $("#wordDiv").css("top", "40%");
+  }
+  else{
+    $("#definitionDiv").css("bottom", "5vw")
+    $("#definitionDiv").css("width", "70vw")
+  }
 })
 
 
@@ -127,7 +134,12 @@ function flowers(){
   $("main").prepend("<img id=flowers class=background src='images/flowers.jpg'>");
   $("#wordDiv").css("width", "80vw");
   $("#wordDiv").css("padding-left", "10vw");
-
+  if (rando == "yes"){
+    $("#definitionDiv").css("background-color", "rgba(255,255,255,.8)")
+    $("#definitionDiv").css("padding-left", "20px")
+    $("#definitionDiv").css("padding-right", "20px")
+    $("#definitionDiv").css("border", "5px solid white")
+  }
 }
 
 function walt(){
@@ -196,12 +208,13 @@ dataType: "jsonp"
 });
 
 getter.done(function(response){
+  word = response["Word"];
   if (response.length > 10){
     getWord;
   }
   else{
     console.log(response);
-    word = response["Word"];
+    userInput = response["Word"];
     var getIt = $.ajax({
       url: "http://api.urbandictionary.com/v0/define?term=" + word,
       method: "GET",
@@ -211,7 +224,11 @@ getter.done(function(response){
 
   getIt.done(function(response){
     console.log("word is " + word);
-    if (response["result_type"] == "no_results" || response["list"][0]["definition"].length > 120)
+    if (rando == "yes")
+    {
+
+    }
+    else if (response["result_type"] == "no_results" || response["list"][0]["definition"].length > 110)
     {
       getWord();
     }
@@ -231,7 +248,11 @@ getter.done(function(response){
 function styleUrban(){
   rando = "yes";
   $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>-"+author+"</p></div>");
-  style();
+    style();
+    if (definition !== ""){
+      $("#wordDiv").css("top", "40%");
+      $("#castle").css("width", "30vw")
+    }
 }
 
 function restyleUrban(){
