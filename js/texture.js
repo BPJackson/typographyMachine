@@ -14,14 +14,14 @@ function chooseTexture(){
 
 function lightTexture(){
   console.log("texture applied")
-  lightRand = Math.round(Math.random()*(8-1)+1);
-  $("body").css("background-image", "url(images/texture/light" + lightRand + ".png)")
+  lightRand = Math.round(Math.random()*(7-1)+1);
+  $("body").css("background-image", "url(images/texture/light" + lightRand + ".jpg)")
 }
 
 
 function darkTexture(){
   console.log("texture applied")
-  darkRand = Math.round(Math.random()*(5-1)+1);
-  $("body").css("background-image", "url(images/texture/dark" + darkRand + ".png)")
-  $("body").css("background-blend-mode", "screen")
+  darkRand = Math.round(Math.random()*(4-1)+1);
+  $("body").css("background-image", "url(images/texture/dark" + darkRand + ".jpg)")
+  // $("body").css("background-blend-mode", "screen")
 }

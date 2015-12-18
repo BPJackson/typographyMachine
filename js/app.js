@@ -80,15 +80,12 @@ $("#randoBlock").mouseover(function(){
 });
 
 $("#randoBlock").mouseout(function(){
+  if (definition == ""){
   $(this).attr('src', 'images/randoBlock.png');
-});
-
-$("#redditBlock").mouseover(function(){
-  $(this).attr('src', 'images/redditbutton-neg.png');
-});
-
-$("#redditBlock").mouseout(function(){
-  $(this).attr('src', 'images/redditbutton.png');
+  }
+  else {
+    $(this).attr('src', 'images/randoBlock-ready.gif');
+  }
 });
 
 $("#shuffleButton").click(function(){
@@ -192,9 +189,27 @@ function hang(){
 }
 
 function flyer(){
-  $("#wordSpan").addClass("flyer");
-  $("#definitionDiv").addClass("flyer");
-  $("body").css("background-color", "purple");
+  var flyerRand = Math.random() * 100;
+  if (flyerRand < 25){
+    $("body").css("background-color", "purple");
+    $("#wordSpan").addClass("flyer1");
+    $("#definitionDiv").addClass("flyer1");
+  }
+  else if (flyerRand > 25 && rand < 50){
+    $("body").css("background-color", "pink");
+    $("#wordSpan").addClass("flyer2");
+    $("#definitionDiv").addClass("flyer2");
+  }
+  else if (flyerRand > 50 && rand < 75){
+    $("body").css("background-color", "#613A31");
+    $("#wordSpan").addClass("flyer3");
+    $("#definitionDiv").addClass("flyer3");
+  }
+  else if (flyerRand > 75){
+    $("body").css("background-color", "#F9F8F6");
+    $("#wordSpan").addClass("flyer4");
+    $("#definitionDiv").addClass("flyer4");
+  }
 
 }
 
@@ -245,6 +260,7 @@ getter.done(function(response){
       console.log("urban response is " + definition);
       console.log("urban example is " + example);
       console.log("by User: " + author);
+      $("#randoBlock").attr('src', 'images/randoBlock-ready.gif')
     }
   });
 });
