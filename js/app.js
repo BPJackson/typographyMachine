@@ -19,7 +19,7 @@ function style(){
   else{
     jQuery(".fit").fitText();
   }
-  embrace();
+  chooseTexture();
 }
 
 function selectStyle(){
@@ -114,19 +114,9 @@ function earlyNight(){
   $(document).ready(function(){
     $("#wordSpan").addClass("earlyNight");
     $("#definitionDiv").addClass("earlyNight");
-    $("body").css('background', "linear-gradient(to right, #1c2329 0%,#313d46 100%)");
+    $("body").css('background-color', "#1c2329");
     $("main").append("<span class=background id='eNightDate'>" + $.now() + "</span>")
   })
-}
-
-function beautyWords(){
-  $(document).ready(function(){
-  $("#wordSpan").addClass("beautyWords");
-  $("#definitionDiv").addClass("beautyWords");
-  $("body").css('background', "linear-gradient(to left, #d7d5d5 0%,#ededed 100%)");
-  $("#wordDiv").prepend("<img id='blockquote' src='http://typespiration.com/wp-content/themes/typespiration/images/quote.png'><br>");
-  // $('#wordDiv').css("margin-top","-100px");
-})
 }
 
 function flowers(){
@@ -176,7 +166,7 @@ function heavy(){
   $("#wordSpan").addClass("heavy");
   $("#definitionDiv").addClass("heavy");
   $("body").css('background', "linear-gradient(to bottom, #ffffff 0%, #f4f4f4 70%, #e7e6e6 100%)");
-  $("body").css('background-repeat', "no-repeat");
+  // $("body").css('background-repeat', "no-repeat");
 
 }
 

@@ -1,6 +1,6 @@
 body {
   background-blend-mode: multiply;
-  background-size: cover auto;
+  background-size: cover;
   /*width: 100vw;*/
   /*height: 100vh;*/
 }
