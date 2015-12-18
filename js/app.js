@@ -214,7 +214,7 @@ dataType: "jsonp"
 
 getter.done(function(response){
   word = response["Word"];
-  if (response.length > 9){
+  if (response.length > 9 && redditInput == ""){
     getWord;
   }
   else{
