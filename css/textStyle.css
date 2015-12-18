@@ -67,7 +67,7 @@
   .tasebro a:hover { color: #1c1c1c; text-decoration: underline; }
 
 .earlyNight{
-text-shadow: 2px 2px 8px rgba(0,0,0,.1);
+text-shadow: 2px 2px 8px rgba(0,0,0,.5);
 }
 
   .earlyNight h1 { color: rgba(255,255,255,.9); font-family: 'Lato-bold', sans-serif; font-weight: 300; text-transform: uppercase;}

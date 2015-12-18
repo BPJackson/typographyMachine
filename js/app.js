@@ -19,7 +19,7 @@ function style(){
   else{
     jQuery(".fit").fitText();
   }
-  rust();
+  embrace();
 }
 
 function selectStyle(){
