@@ -91,7 +91,7 @@ header {
   text-align: center;
   /*padding-top: 27vh*/
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
 }
 
@@ -118,6 +118,12 @@ header {
 }
 
 #randoBlock{
+  width: 5vw;
+  clear: both;
+  margin-top: 20px;
+}
+
+#redditBlock{
   width: 5vw;
   clear: both;
   margin-top: 20px;

@@ -83,6 +83,14 @@ $("#randoBlock").mouseout(function(){
   $(this).attr('src', 'images/randoBlock.png');
 });
 
+$("#redditBlock").mouseover(function(){
+  $(this).attr('src', 'images/redditbutton-neg.png');
+});
+
+$("#redditBlock").mouseout(function(){
+  $(this).attr('src', 'images/redditbutton.png');
+});
+
 $("#shuffleButton").click(function(){
   $("#wordDiv").remove();
   $("main .background").remove();
@@ -195,6 +203,7 @@ var definition = "";
 var example = "";
 var author = "";
 var rando = "no";
+var isDef = "no"
 
 $(document).ready(function getWord(){
 var getter = $.ajax({
@@ -205,7 +214,7 @@ dataType: "jsonp"
 
 getter.done(function(response){
   word = response["Word"];
-  if (response.length > 10){
+  if (response.length > 9){
     getWord;
   }
   else{
@@ -246,6 +255,7 @@ function styleUrban(){
   $("main").append("<div id=definitionDiv><p id=definitionP>"+definition+"</p><p id=exampleP>"+example+"</p><p id=authorP>"+author+"</p></div>");
     style();
     if (definition !== ""){
+      isDef = "yes";
       if (rand < 87.5){
         $("#wordDiv").css("top", "40%");
         $("#castle").css("width", "30vw")
