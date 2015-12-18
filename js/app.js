@@ -19,12 +19,14 @@ function style(){
   else{
     jQuery(".fit").fitText();
   }
-  chooseTexture();
+  if (rand > 50){
+    chooseTexture();
+  }
 }
 
 function selectStyle(){
   if (rand < 12.5){
-    earlyNight();
+    hang();
   }
   else if (rand > 12.5 && rand < 25){
     taseMeBro();
@@ -36,10 +38,10 @@ function selectStyle(){
     flowers();
   }
   else if (rand > 50 && rand < 62.5){
-    tomKendry();
+  earlyNight();
   }
   else if (rand > 62.5 && rand < 75){
-    hang();
+    tomKendry();
   }
   else if (rand > 75 && rand < 87.5){
     flyer();
@@ -91,13 +93,14 @@ $("#shuffleButton").click(function(){
     restyleUrban();
   }
   style();
-  if (rando == "yes" && rand < 87.5){
-    $("#wordDiv").css("top", "40%");
-  }
-  else{
-    $("#definitionDiv").css("bottom", "5vw")
-    $("#definitionDiv").css("width", "70vw")
-  }
+  $("body").css("background-size", "cover")
+  // if (rando == "yes" && rand < 87.5){
+    // $("#wordDiv").css("top", "40%");
+  // }
+  // else{
+    // $("#definitionDiv").css("bottom", "5vw")
+    $("#definitionDiv").css("width", "65vw")
+  // }
 })
 
 
@@ -129,6 +132,7 @@ function flowers(){
     $("#definitionDiv").css("background-color", "rgba(255,255,255,.8)")
     $("#definitionDiv").css("padding-left", "20px")
     $("#definitionDiv").css("padding-right", "20px")
+    $("#definitionDiv").css("margin-left", "-30px")
     $("#definitionDiv").css("border", "5px solid white")
   }
 }
@@ -176,6 +180,7 @@ function hang(){
   $("body").css('background-image', "radial-gradient(ellipse farthest-corner at 50% 65% , rgba(255,238,132,.5) 20%, #6e6e6e 60%, #222222 85%)");
   $("body").append("<div id=lightBlend></div>");
   $("#lightBlend").css('background-image', "radial-gradient(ellipse farthest-corner at 50% 65% , rgba(255,238,132,.2) 20%,  rgba(0,0,0,.0) 55%)");
+  $("#wordDiv").css("top", "40%");
 }
 
 function flyer(){
